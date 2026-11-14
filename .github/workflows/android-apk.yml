@@ -1,3 +1,4 @@
+
 name: Build Airport GTA3D APK
 
 on:
@@ -29,7 +30,13 @@ jobs:
         run: |
           unzip -q AirportGTA3D_Morocco_v12_StartButton_Fix.zip -d project
 
+      - name: Build APK
+        run: |
+          cd project/AirportGTA3D_Android
+          gradle assembleDebug
+
       - uses: actions/upload-artifact@v4
         with:
           name: AirportGTA3D-debug-apk
           path: project/AirportGTA3D_Android/app/build/outputs/apk/debug/app-debug.apk
+          
