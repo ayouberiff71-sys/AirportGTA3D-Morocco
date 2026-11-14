@@ -29,7 +29,9 @@ jobs:
       - name: Extract game project
         run: |
           unzip -q AirportGTA3D_Morocco_v12_StartButton_Fix.zip -d project
-
+      - name: Enable AndroidX
+        run: |
+          echo "android.useAndroidX=true" >> project/AirportGTA3D_Android/gradle.properties
       - name: Build APK
         run: |
           cd project/AirportGTA3D_Android
