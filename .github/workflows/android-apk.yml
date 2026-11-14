@@ -27,9 +27,7 @@ jobs:
 
       - name: Extract game project
         run: |
-          unzip -q AirportGTA3D_Morocco_v10_APK_Online_Setup.zip -d project
-          cd project/AirportGTA3D_Android
-          gradle --no-daemon assembleDebug
+          unzip -q AirportGTA3D_Morocco_v12_StartButton_Fix.zip -d project
 
       - uses: actions/upload-artifact@v4
         with:
